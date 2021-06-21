@@ -1,9 +1,10 @@
 import './App.css';
+import Dinner from './Dinner'
 
 function App() {
   return (
     <div className="App">
-      hello to World
+      <Dinner dish="Chicken Biryani" />
     </div>
   );
 }
