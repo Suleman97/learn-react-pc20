@@ -1,10 +1,18 @@
+import { useState } from 'react'
 import './App.css';
 import Dinner from './Dinner'
 
 function App() {
+
+  const [count, setCount] = useState(0);
+  const [day, setDay] = useState(true);
   return (
     <div className="App">
       <Dinner dish="Chicken Biryani" />
+      <button onClick={() => setCount(count + 1)}>Click to add</button>
+      <h3>{count}</h3>
+      <button onClick={() => setDay(!day)}>click to change time</button>
+      <h2>Time in'morning or night': {day ? 'Morning' : 'night'}</h2>
     </div>
   );
 }
