@@ -7,7 +7,8 @@ function Child() {
   return (
     <div>
       <h1>this is child</h1>
-      <h4>Counter value is : {counterValue}</h4>
+      <h4>Counter value is : {counterValue[0]}</h4>
+      <button onClick={() => { counterValue[1](++counterValue[0]) }}>click to add</button>
     </div>
   )
 }

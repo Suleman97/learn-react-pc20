@@ -1,8 +1,12 @@
 import Child from "./Child"
+import ChildReducer from "./Child-reducer"
 
 function Parent() {
   return (
-    <Child />
+    <div>
+      <Child />
+      <ChildReducer />
+    </div>
   )
 }
 
