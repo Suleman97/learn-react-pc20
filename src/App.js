@@ -1,15 +1,27 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react';
 import './App.css';
-import Dinner from './components/Dinner'
+import Dinner from './components/Dinner';
 // import Child from './components/Child';
 import Parent from './components/Parent';
 import CounterContext from './ContextAPI/CounterContext';
 
 function App() {
-
   const [count, setCount] = useState(0);
   const countState = useState(25);
   const [day, setDay] = useState(true);
+  const [repos, setRepos] = useState([{}]);
+
+  useEffect(() => {
+    async function fetchData() {
+      const api = await fetch(`https://api.github.com/users/Suleman97/repos`);
+      const data = await api.json();
+      // console.log(data);
+      setRepos(data);
+    }
+    fetchData();
+  }, []);
+
+  console.log(repos)
   return (
     <div className="App">
       <Dinner dish="Chicken Biryani" />
@@ -20,6 +32,11 @@ function App() {
       <CounterContext.Provider value={countState}>
         <Parent />
       </CounterContext.Provider>
+      <ul>
+        {repos.map((Obj, index) => (
+          <li key={index}>{Obj.name}</li>
+        ))}
+      </ul>
     </div>
   );
 }
