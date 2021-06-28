@@ -1,31 +1,33 @@
-import { Suspense, useEffect, useState } from 'react';
+// import { Suspense, useEffect, useState } from 'react';
 import './App.css';
-import Dinner from './components/Dinner';
+// import Dinner from './components/Dinner';
+import VerticalBar from './components/VerticalBar';
 // import Child from './components/Child';
-import Parent from './components/Parent';
-import CounterContext from './ContextAPI/CounterContext';
+// import Parent from './components/Parent';
+// import CounterContext from './ContextAPI/CounterContext';
+import PieChart from './components/PieChart';
 
 function App() {
-  const [count, setCount] = useState(0);
-  const countState = useState(25);
-  const [day, setDay] = useState(true);
-  const [repos, setRepos] = useState([{}]);
+  // const [count, setCount] = useState(0);
+  // const countState = useState(25);
+  // const [day, setDay] = useState(true);
+  // const [repos, setRepos] = useState([{}]);
 
-  useEffect(() => {
-    async function fetchData() {
+  // useEffect(() => {
+  //   async function fetchData() {
 
-      const api = await fetch(`https://api.github.com/users/Suleman97/repos`);
-      const data = await api.json();
-      // console.log(data);
-      setRepos(data);
-    }
-    fetchData();
-  }, []);
+  //     const api = await fetch(`https://api.github.com/users/Suleman97/repos`);
+  //     const data = await api.json();
+  //     // console.log(data);
+  //     setRepos(data);
+  //   }
+  //   fetchData();
+  // }, []);
 
-  console.log(repos);
+  // console.log(repos);
   return (
-    <div className="App">
-      <Dinner dish="Chicken Biryani" />
+    <div >
+      {/* <Dinner dish="Chicken Biryani" />
       <button onClick={() => setCount(count + 1)}>Click to add</button>
       <h3>{count}</h3>
       <button onClick={() => setDay(!day)}>click to change time</button>
@@ -40,7 +42,10 @@ function App() {
             <li key={index}>{Obj.name}</li>
           ))}
         </Suspense>
-      </ul>
+      </ul> */}
+
+      <VerticalBar />
+      <PieChart />
 
     </div>
   );

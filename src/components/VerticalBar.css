@@ -1,0 +1,9 @@
+.canvas {
+  height: 500px !important;
+  width: 500px !important;
+  margin: 0 auto;
+}
+
+.header {
+  background-color: aqua;
+}
