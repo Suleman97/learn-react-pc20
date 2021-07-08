@@ -12,6 +12,7 @@
     "react": "0.0.0-experimental-73ffce1b6-20210624",
     "react-chartjs-2": "^3.0.3",
     "react-dom": "0.0.0-experimental-73ffce1b6-20210624",
+    "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
     "web-vitals": "^1.1.2"
   },
